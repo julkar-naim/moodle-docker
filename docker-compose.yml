@@ -1,0 +1,35 @@
+services:
+  moodle:
+    image: moodle-docker
+    ports:
+      - 8000:80
+    working_dir: /var/www/moodle
+    volumes:
+      - ./:/var/www/moodle
+      - moodle-data:/var/moodledata
+    environment:
+      MYSQL_HOST: mysql
+      MOODLE_HOST: moodle
+      MYSQL_USER: root
+      MYSQL_PASSWORD: admin
+      MYSQL_DB: moodle
+    networks:
+      - moodle-net
+
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - moodle-mysql-db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: moodle
+    networks:
+      - moodle-net
+
+volumes:
+  moodle-mysql-db:
+  moodle-data:
+
+networks:
+  moodle-net:
+    driver: bridge
