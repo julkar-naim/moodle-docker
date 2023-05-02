@@ -9,6 +9,13 @@ RUN mkdir /var/moodledata
 RUN chmod -R 0777 /var/moodledata
 
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o - | sh -s \
-      mysqli gd zip intl
+      mysqli gd zip intl xdebug
+
+COPY docker-php-ext-xdebug.ini /usr/local/etc/php/conf.d
+
+EXPOSE 9000
+EXPOSE 9001
+EXPOSE 9002
+EXPOSE 9003
 
 CMD ["apache2-foreground"]
