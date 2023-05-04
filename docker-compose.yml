@@ -3,10 +3,6 @@ services:
     image: julkarnaim/moodle-docker
     ports:
       - 8000:80
-      - 8001:9000
-      - 8002:9001
-      - 8003:9002
-      - 8004:9003
     working_dir: /var/www/moodle
     volumes:
       - ./:/var/www/moodle
