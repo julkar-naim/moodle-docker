@@ -1,6 +1,6 @@
 services:
   moodle:
-    image: julkarnaim/moodle-docker
+    image: julkarnaim/moodle-docker:4.2
     ports:
       - 8000:80
     working_dir: /var/www/moodle

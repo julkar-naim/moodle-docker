@@ -6,10 +6,10 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'mysqli';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = $_ENV['MYSQL_HOST'];
-$CFG->dbname    = $_ENV['MYSQL_DB'];
-$CFG->dbuser    = $_ENV['MYSQL_USER'];
-$CFG->dbpass    = $_ENV['MYSQL_PASSWORD'];
+$CFG->dbhost    = getenv('MYSQL_HOST');
+$CFG->dbname    = getenv('MYSQL_DB');
+$CFG->dbuser    = getenv('MYSQL_USER');
+$CFG->dbpass    = getenv('MYSQL_PASSWORD');
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,

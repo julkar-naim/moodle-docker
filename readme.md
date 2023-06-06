@@ -27,7 +27,7 @@ Or build it yourself
 
 <pre>
 $ cd moodle-docker
-$ docker build -t julkar-naim/moodle-docker .
+$ docker build -t julkar-naim/moodle-docker:4.2 .
 </pre>
 
 Now copy config file and docker compose file to the project directory
